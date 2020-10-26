@@ -1,0 +1,10 @@
+/Users/isaacmarovitz/Documents/RustProjects/mandelbrot/target/rls/debug/deps/indicatif-067670692c3a9ea4.rmeta: /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/lib.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/format.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/iter.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/progress.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/style.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/utils.rs
+
+/Users/isaacmarovitz/Documents/RustProjects/mandelbrot/target/rls/debug/deps/indicatif-067670692c3a9ea4.d: /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/lib.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/format.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/iter.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/progress.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/style.rs /Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/utils.rs
+
+/Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/lib.rs:
+/Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/format.rs:
+/Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/iter.rs:
+/Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/progress.rs:
+/Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/style.rs:
+/Users/isaacmarovitz/.cargo/registry/src/github.com-1ecc6299db9ec823/indicatif-0.15.0/src/utils.rs:

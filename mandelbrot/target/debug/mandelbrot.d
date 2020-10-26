@@ -1,1 +1,1 @@
-/Users/isaacmarovitz/Documents/RustProjects/mandelbrot/mandelbrot/target/debug/mandelbrot: /Users/isaacmarovitz/Documents/RustProjects/mandelbrot/mandelbrot/src/main.rs
+/Users/isaacmarovitz/Documents/RustProjects/mandelbrot/target/debug/mandelbrot: /Users/isaacmarovitz/Documents/RustProjects/mandelbrot/src/main.rs

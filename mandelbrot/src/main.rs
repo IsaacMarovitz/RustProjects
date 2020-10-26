@@ -1,6 +1,7 @@
 use num::complex::Complex;
 use image::{RgbImage, Rgb};
 use std::time::SystemTime;
+use indicatif::{ProgressBar, ProgressStyle};
 
 fn mandelbrot(c: Complex<f64>, z: Complex<f64>, iterations: u8, max_iterations: u8) -> u8 {
     let z_new:Complex<f64> = z*z + c;
@@ -14,18 +15,26 @@ fn mandelbrot(c: Complex<f64>, z: Complex<f64>, iterations: u8, max_iterations: 
 }
 
 fn main() {
-    let x_size = 20000;
-    let y_size = 20000;
+    let x_size = 15000;
+    let y_size = 15000;
     let max_iterations = 255;
     let x_offset = 4.0 / x_size as f64;
     let y_offset = 4.0 / y_size as f64;
     let mut img = RgbImage::new(x_size, y_size);
     let start_time = SystemTime::now();
+    let pb = ProgressBar::new(x_size as u64);
+
+    println!("Rendering a {:?} x {:?} image of the Mandelbrot Set", x_size, y_size);
+    pb.set_style(ProgressStyle::default_bar()
+        .template("[{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})")
+        .progress_chars("=>-"));
     
     for x in 0..x_size {
+        pb.set_position(x as u64);
         for y in 0..y_size {
             let c: Complex<f64> = Complex::new(x as f64*x_offset-2.0, y as f64*y_offset-2.0);
             let mandelbrot_num:u8 = mandelbrot(c, Complex::new(0.0, 0.0), 1, max_iterations);
+
             if mandelbrot_num == 1 || mandelbrot_num == 6 {
                 img.put_pixel(x, y, Rgb([255, 255, 255]));
             } else if mandelbrot_num == 0 {
@@ -56,5 +65,6 @@ fn main() {
         }
     }
     img.save("Mandelbrot4.png").expect("Image failed to save.");
-    println!("Finished Mandelbrot in {:?} seconds", start_time.elapsed());
+    pb.finish();
+    println!("Finished Mandelbrot in {:.1} seconds", start_time.elapsed().unwrap().as_secs_f32());
 }
