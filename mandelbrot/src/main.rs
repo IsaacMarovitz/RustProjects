@@ -1,7 +1,33 @@
 use num::complex::Complex;
 use image::{RgbImage, Rgb};
 use std::time::SystemTime;
+use std::io;
+use std::io::Write;
 use indicatif::{ProgressBar, ProgressStyle};
+use crossterm::{ExecutableCommand, terminal};
+
+fn input(message: &str, failure_message: &str) -> u32 {
+    let mut input_received = false;
+    let mut return_int = 0;
+
+    while !input_received {
+        print!("{}", message);
+        io::stdout().flush().unwrap();
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Failed to read input!");
+        input = input.trim().to_string();
+        match input.parse::<u32>() {
+            Ok(n) => {
+                return_int = n; 
+                input_received = true;
+            },
+            Err(_) => {
+                println!("{}", failure_message);
+            },
+        }
+    }
+    return_int
+}
 
 fn mandelbrot(c: Complex<f64>, z: Complex<f64>, iterations: u8, max_iterations: u8) -> u8 {
     let z_new:Complex<f64> = z*z + c;
@@ -15,15 +41,18 @@ fn mandelbrot(c: Complex<f64>, z: Complex<f64>, iterations: u8, max_iterations: 
 }
 
 fn main() {
-    let x_size = 15000;
-    let y_size = 15000;
+    io::stdout().execute(terminal::Clear(terminal::ClearType::All)).unwrap();
+
+    let x_size = input("Input x size: ", "Only input intergers!");
+    let y_size = input("Input y size: ", "Only input intergers!");
     let max_iterations = 255;
     let x_offset = 4.0 / x_size as f64;
     let y_offset = 4.0 / y_size as f64;
     let mut img = RgbImage::new(x_size, y_size);
     let start_time = SystemTime::now();
     let pb = ProgressBar::new(x_size as u64);
-
+    
+    io::stdout().execute(terminal::Clear(terminal::ClearType::All)).unwrap();
     println!("Rendering a {:?} x {:?} image of the Mandelbrot Set", x_size, y_size);
     pb.set_style(ProgressStyle::default_bar()
         .template("[{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})")
