@@ -11,3 +11,4 @@ Cargo.lock
 **/*.rs.bk
 
 **/imgs/*.png
+*.DS_Store
