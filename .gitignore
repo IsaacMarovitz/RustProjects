@@ -12,3 +12,4 @@ Cargo.lock
 
 **/imgs/*.png
 *.DS_Store
+hello_cargo/
